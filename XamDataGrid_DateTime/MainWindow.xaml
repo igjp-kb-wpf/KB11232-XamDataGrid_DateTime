@@ -1,0 +1,38 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:XamDataGrid_DateTime"
+        xmlns:igWPF="http://schemas.infragistics.com/xaml/wpf" x:Class="XamDataGrid_DateTime.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="500">
+    <Grid>
+        <igWPF:XamDataGrid  x:Name="xamDataGrid1" DataSource="{Binding}">
+            <igWPF:XamDataGrid.FieldLayoutSettings>
+                <igWPF:FieldLayoutSettings AutoGenerateFields="False" />
+            </igWPF:XamDataGrid.FieldLayoutSettings>
+            <igWPF:XamDataGrid.FieldLayouts>
+                <igWPF:FieldLayout>
+                    <igWPF:FieldLayout.Fields>
+                        <igWPF:Field Name="Id" />
+                        <igWPF:DateTimeField Name="Test1" >
+                            <igWPF:Field.Settings >
+                                <igWPF:FieldSettings >
+                                    <igWPF:FieldSettings.EditorStyle>
+                                        <Style TargetType="{x:Type igWPF:XamDateTimeEditor}" >
+                                            <Style.Setters>
+                                                <Setter Property="Mask" Value="yyyy/mm" />
+                                            </Style.Setters>
+                                        </Style>
+                                    </igWPF:FieldSettings.EditorStyle>
+                                </igWPF:FieldSettings>
+                            </igWPF:Field.Settings>
+                        </igWPF:DateTimeField>
+                        <igWPF:Field Name="Test2"/>
+                    </igWPF:FieldLayout.Fields>
+                </igWPF:FieldLayout>
+            </igWPF:XamDataGrid.FieldLayouts>
+        </igWPF:XamDataGrid>
+    </Grid>
+</Window>
